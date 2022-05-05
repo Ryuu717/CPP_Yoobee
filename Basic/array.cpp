@@ -35,15 +35,15 @@ int main(){
 
 
     //Idea.2    Use "For Loop"
-    //Declare maxWeight and heaviestPerson
+    //1. Declare maxWeight and heaviestPerson
     float maxWeight = 0;
     string heaviestPerson;
 
-    //Compare each number
+    //2. Compare each number
     for (int i = 0; i < 5; i++){
         for (int j = 0; j < 5; j++){
 
-            //if the weight is greater than the others and the maxWeight, then update the maxWeight and the heaviestPerson
+            //3. if the weight is greater than the others and the maxWeight, then update the maxWeight and the heaviestPerson
             if (weight[i] - weight[j] > 0 && weight[i] > maxWeight){
                 maxWeight = weight[i];
                 heaviestPerson = person[i];
