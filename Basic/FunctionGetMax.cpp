@@ -5,22 +5,22 @@
 using namespace std;
 
 
-string getMaxWeight (float weight[], int arraySize);
-string getYoungestPerson (int age[], int arraySize);
+string getMaxWeight (float weightArray[], string personArray[], int arraySize);
+string getYoungestPerson (int ageArray[], string personArray[], int arraySize);
 int getMaleCount (char gender[], int arraySize);
 
 
 
-//Array is a list of values stored under a common name
-string person[3] = { "Ryuu","Veni","Darijan" };
-int age[3] = { 23, 25, 16 };    
-float weight[3] = { 45.0, 30.0, 25.5 };
-char gender[3] = { 'M' , 'F', 'M' };
-
-
 int main(){
-    cout << getMaxWeight(weight,3) << " is the heaviest person " << endl;
-    cout << getYoungestPerson(age,3) << " is the youngest person " << endl;
+    //Array is a list of values stored under a common name
+    string person[3] = { "Ryuu","Veni","Darijan" };
+    int age[3] = { 23, 25, 16 };    
+    float weight[3] = { 45.0, 30.0, 25.5 };
+    char gender[3] = { 'M' , 'F', 'M' };
+
+
+    cout << getMaxWeight(weight, person, 3) << " is the heaviest person " << endl;
+    cout << getYoungestPerson(age, person, 3) << " is the youngest person " << endl;
     cout << "There are " << getMaleCount(gender,3) << " male members" << endl;
 
     return 0;
@@ -28,27 +28,27 @@ int main(){
 
 
 
-string getMaxWeight (float weightArray[], int arraySize) {
+string getMaxWeight (float weightArray[], string personArray[], int arraySize) {
     float maxWeight = 0;
     string heaviestPerson;
 
     for (int i = 0; i < arraySize; i++){
         if (weightArray[i] > maxWeight){
             maxWeight = weightArray[i];
-            heaviestPerson = person[i];
+            heaviestPerson = personArray[i];
         }
     }
     return heaviestPerson;
 }
 
-string getYoungestPerson (int ageArray[], int arraySize) {
+string getYoungestPerson (int ageArray[], string personArray[], int arraySize) {
     int youngestAge = 100;
     string youngestPerson;
 
     for (int i = 0; i < arraySize; i++){
         if (ageArray[i] < youngestAge){
             youngestAge = ageArray[i];
-            youngestPerson = person[i];
+            youngestPerson = personArray[i];
         }
     }
     return youngestPerson;
