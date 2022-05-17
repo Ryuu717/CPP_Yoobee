@@ -34,7 +34,6 @@ int main(){
     return 0;
 }
 
-
 void input(){
     int days_to_apply;
 
@@ -90,7 +89,6 @@ void view_weekly_expenses(){
 void calculate(){
     cout << "Update later";
 }
-
 
 
 void menu(){

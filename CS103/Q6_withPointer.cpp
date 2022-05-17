@@ -49,15 +49,15 @@ void input(){
 
     // cout << "Enter the expenses of day " << "\n";
     // cout << "Date (dd/mm/yyyy): ";
-    // cin >> expenses.date;
+    // cin >> ptr->date;
     // cout << "Transport cost (NZD) : ";
-    // cin >> expenses.transport_cost;
+    // cin >> ptr->transport_cost;
     // cout << "Meal cost (NZD) : ";
-    // cin >> expenses.meal_cost;
+    // cin >> ptr->meal_cost;
     // cout << "Entertainment cost (NZD) : ";
-    // cin >> expenses.entertainment_cost;
+    // cin >> ptr->entertainment_cost;
     // cout << "Others (NZD) : ";
-    // cin >> expenses.others;
+    // cin >> ptr->others;
     // cout << "\n";
 
     // //output    
@@ -76,15 +76,15 @@ void input(){
     for (int i = 0; i < days_to_apply; i++){
         cout << "Enter the expenses of day " << i + 1 << "\n";
         cout << "Date (dd/mm/yyyy): ";
-        cin >> expenses[i].date;
+        cin >> (ptr+i)->date;
         cout << "Transport cost (NZD) : ";
-        cin >> expenses[i].transport_cost;
+        cin >> (ptr+i)->transport_cost;
         cout << "Meal cost (NZD) : ";
-        cin >> expenses[i].meal_cost;
+        cin >> (ptr+i)->meal_cost;
         cout << "Entertainment cost (NZD) : ";
-        cin >> expenses[i].entertainment_cost;
+        cin >> (ptr+i)->entertainment_cost;
         cout << "Others (NZD) : ";
-        cin >> expenses[i].others;
+        cin >> (ptr+i)->others;
         cout << "\n";
     }
 

@@ -2,7 +2,6 @@
 using namespace std;
 
 
-
 int main() {
     //declare matrices
     int A[3][3] = {};
@@ -27,6 +26,7 @@ int main() {
     
 
     //Matrix A
+    cout << "\n================================================";
     cout << "\nA Matrix\n";
     for (int i = 0; i < 3; i++){
         for (int j = 0; j < 3; j++){
@@ -51,7 +51,7 @@ int main() {
             C[i][j] = A[i][j] + B[i][j];
             cout << C[i][j] << "\t";
         }
-        cout << endl;
+        cout << "\n";
     }
 
 
@@ -61,9 +61,10 @@ int main() {
         for (int j = 0; j < 3; j++){
             cout << C[i][j] * 3 << "\t";
         }
-        cout << endl;
+        cout << "\n";
+        
     }
-
+    cout << "================================================\n";
 
     return 0;
 }

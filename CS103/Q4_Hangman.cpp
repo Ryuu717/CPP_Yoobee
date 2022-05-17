@@ -2,10 +2,7 @@
 #include <ctime>
 #include <stdio.h>      /* printf, scanf, puts, NULL */
 #include <stdlib.h>     /* srand, rand */
-
-
 using namespace std;
-
 
 //funtion prototypes
 void draw_line();
@@ -15,7 +12,6 @@ void invert_hangman();
 void play();
 
 
-
 int main(){
     //call play function
     play();
@@ -23,14 +19,10 @@ int main(){
     return 0;
 }
 
-
-
-
 //draw line (without parameters)
 void draw_line(){
     cout << "----------------------------------------------------------------\n";
 }
-
 
 //draw hangman (with parameters, with a return value)
 string draw_hangman(int life){
@@ -43,7 +35,6 @@ string draw_hangman(int life){
 
     return hangman_lives[life];
 }
-
 
 //draw walkman (without any return value)
 void draw_Walkman(){

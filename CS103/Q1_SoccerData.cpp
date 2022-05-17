@@ -17,11 +17,9 @@ struct Soccer {
 };
 
 
-
 //funtion prototypes
 void input();
 void output(struct Soccer soccer[2]);
-
 
 
 //main
@@ -32,8 +30,6 @@ int main() {
 
     return 0;
 }
-
-
 
 
 //output function (argument = array) 
@@ -65,7 +61,7 @@ void output(struct Soccer soccer[2]){
                 break;
         }
     }
-    cout << "=============================================================";
+    cout << "=============================================================\n";
 }
 
 
@@ -82,7 +78,7 @@ void input(){
         cout << " Top speed(mph) : ";
         cin >> soccer[i].top_speed;
         cout << " Position type";
-        cout << "\n\tg = goalkeeper, \n\tm = midfielder, \n\ts = striker, \n\tw = winger, \n\td = defender\n : ";
+        cout << "\n\tg = goalkeeper, \n\tm = midfielder, \n\ts = striker, \n\tw = winger, \n\td = defender\n \t\t\t: ";
         cin >> soccer[i].position_type;
         cout << "\n";
     }
@@ -92,5 +88,7 @@ void input(){
 }
 
 
+
+//Memo
 //1. Need to add comment ✔️
 //2. Need to add validation

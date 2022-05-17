@@ -40,6 +40,7 @@ void input(){
     //get array size
     cout << "\nEnter the array size: ";
     cin >> size;
+    cout << "\n";
 
     //get array numbers from user
     for(int i=0; i<size; i++){    
