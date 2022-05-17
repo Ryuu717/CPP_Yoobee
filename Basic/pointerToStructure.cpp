@@ -15,7 +15,7 @@ struct Phone{
 	string phoneName;
 	string model;
 	int price;
-	float cameraPixel;
+	float cameraResolution;
 	//string animal;//cat or phone or camel
 
 	//constructor is used to initialize member variables. It helps when input is not given to the program. Otherwise warning and bugs would occur.
@@ -23,7 +23,7 @@ struct Phone{
 		phoneName = dn;
 		model = dm;
 		price = dp;
-		cameraPixel = dc;
+		cameraResolution = dc;
 	}
 
 };
@@ -38,7 +38,7 @@ int main()
 {
 	Phone phone;
 	//int x = 0;// data type, variable name and initial value of x //initalizing x
-	//cout << animal.cameraPixel+5;
+	//cout << animal.cameraResolution+5;
 	Phone* ptr;
 	ptr = &phone; //& refers to the memory address to be assigned to ptr
 
@@ -78,8 +78,8 @@ int main()
 //	getline(cin, ani.model);
 //	cout << "\nInput price of the phone: ";
 //	cin >> ani.price;
-//	cout << "\nInput cameraPixel of the phone: ";
-//	cin >> ani.cameraPixel;
+//	cout << "\nInput cameraResolution of the phone: ";
+//	cin >> ani.cameraResolution;
 //	return(ani);
 //}
 
@@ -90,15 +90,15 @@ struct Phone* inputValue(struct Phone *p) {
 	getline(cin, p->model);
 	cout << "\nInput price of the phone: ";
 	cin >> p->price;
-	cout << "\nInput cameraPixel of the phone: ";
-	cin >> p->cameraPixel;
+	cout << "\nInput camera resolution of the phone: ";
+	cin >> p->cameraResolution;
 	return(p);
 }
 
 //function to output values received from inputValues function
 void outputValue(struct Phone* p) {
 	cout << "\nName of the phone: " << p->phoneName;	
-	cout << "\nmodel of the phone: " << p->model;	
-	cout << "\nprice of the phone: " << p->price;
-	cout << "\ncameraPixel of the phone: " << p->cameraPixel << "\n";
+	cout << "\nModel of the phone: " << p->model;	
+	cout << "\nPrice of the phone: " << p->price;
+	cout << "\nCamera Resolution of the phone: " << p->cameraResolution << "\n";
 }
