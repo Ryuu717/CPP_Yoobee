@@ -9,6 +9,7 @@ struct Expenses {
     float entertainment_cost;
     float others;
 
+    //constructor
     Expenses(string date= "dd/mm/yyyy", float transport_cost = 0, float meal_cost = 0, float entertainment_cost = 0, float others = 0){
         date = date;
         transport_cost = transport_cost;
@@ -71,7 +72,9 @@ void input(){
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //input for several days  
     struct Expenses expenses[days_to_apply];
-    struct Expenses *ptr = &expenses[days_to_apply];
+    // struct Expenses *ptr = &expenses[days_to_apply];
+    struct Expenses *ptr = expenses;
+    
 
     for (int i = 0; i < days_to_apply; i++){
         cout << "Enter the expenses of day " << i + 1 << "\n";
