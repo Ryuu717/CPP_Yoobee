@@ -1,1 +1,1 @@
-#include <cmath>
+void outputCustomers(struct BankCustomer* p);

@@ -19,12 +19,15 @@ int main(){
     return 0;
 }
 
+
+
 //draw line (without parameters)
 void draw_line(){
     cout << "----------------------------------------------------------------\n";
 }
 
 //draw hangman (with parameters, with a return value)
+//show different types of Hnagman depend on the remaining life
 string draw_hangman(int life){
     string hangman_lives[] = {
     " +---+\n |   |\n |   O\n |  /|\\  \n |  / \\ \n |     \n=========\n",
@@ -54,10 +57,12 @@ void invert_hangman(){
 //play game
 void play(){
     //introduction
-    draw_line();
+    // draw_line();
+    cout << "\n////////////////////////////////////////////////////////////////\n";
     cout << "Welcome to play Hnagman.\n";
     cout << "This game is to check your spelling skill\n";
-    draw_line();
+    // draw_line();
+    cout << "////////////////////////////////////////////////////////////////\n";
 
 
     //randomly choose a word from the list
@@ -83,6 +88,7 @@ void play(){
     int blank_length = word_length;
 
     while (life > 0 && blank_length > 0){       //continue the game as long as the life is positive and there is a blank space
+        draw_line();
         cout << "Your life is " << life << "\n";
 
         //draw hangman
@@ -98,7 +104,7 @@ void play(){
         //user's input
         cout << "Guess a letter : ";
         cin >> guess;
-        cout << "\n";
+        // cout << "\n";
 
         //check the user's input and the correct answer for each letter.
         //if correct, replace from blank space to correct letter
@@ -112,9 +118,9 @@ void play(){
         //check if the user's input is in the word
         //if not, lose life
         if (word.find(guess) != string::npos){
-            cout << "You are right!\n\n";
+            cout << "  ->You are right!\n\n";
         } else {
-            cout << "You are wrong!\n\n";
+            cout << "  ->You are wrong!\n\n";
             life--;
         }
     }
@@ -122,16 +128,20 @@ void play(){
 
     //game over
     if (life == 0){
+        draw_line();
         cout << "Game over\n";
         invert_hangman();
         cout << "Correct answer is " << word << "\n";
+        draw_line();
     }
 
     //game clear
     if (blank_length == 0){
+        draw_line();
         cout << "Conglatulations!!\n\n";
         draw_Walkman();
         cout << "Correct answer is " << word << "\n\n";
+        draw_line();
     }
 }
 
