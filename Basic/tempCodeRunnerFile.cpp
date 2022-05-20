@@ -1,1 +1,0 @@
-void outputCustomers(struct BankCustomer* p);

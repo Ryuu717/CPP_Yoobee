@@ -160,7 +160,6 @@ void ascending(struct BankCustomer* p){
     //declare account size
     int customerCount = 3;
 
-
     //create ranking by comparing each customer balance.
     //show smaller balances in order
     //Continue as many as the number of customers
