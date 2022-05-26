@@ -4,6 +4,7 @@
 #include <stdlib.h>     /* srand, rand */
 using namespace std;
 
+
 //funtion prototypes
 void draw_line();
 string draw_hangman(int life);
@@ -74,7 +75,7 @@ void play(){
 
 
     //show blanks and word length
-    int word_length = word.length();    //Assign a function return value to a variable.
+    int word_length = word.length(); 
     string blanks;
     
     for (int i = 0; i < word_length; i++){
@@ -86,13 +87,14 @@ void play(){
     char guess;
     int life = 3;
     int blank_length = word_length;
+    string hangman = draw_hangman(life - 1);
 
     while (life > 0 && blank_length > 0){       //continue the game as long as the life is positive and there is a blank space
         draw_line();
         cout << "Your life is " << life << "\n";
 
         //draw hangman
-        cout << draw_hangman(life - 1);
+        cout << hangman;
 
         //show blanks
         for (int i = 0; i < word_length; i++){
@@ -124,7 +126,6 @@ void play(){
             life--;
         }
     }
-
 
     //game over
     if (life == 0){

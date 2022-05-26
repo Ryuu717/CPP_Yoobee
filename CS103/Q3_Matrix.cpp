@@ -45,7 +45,7 @@ int main() {
     }
 
     //Matrix C (= A + B)
-    cout << "\nC Matrix\n";
+    cout << "\nC Matrix (= A + B)\n";
     for (int i = 0; i < 3; i++){
         for (int j = 0; j < 3; j++){
             C[i][j] = A[i][j] + B[i][j];

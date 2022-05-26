@@ -96,7 +96,7 @@ void menu(int* ptr){
             break;
 
         case 2:
-            cout << "Your final score : " << calculate_score(ptr) << "\n\n";
+            cout << "Your final score : " << calculate_score(ptr) << " / 30 " << "\n\n";
             menu(ptr);
             break;
 
