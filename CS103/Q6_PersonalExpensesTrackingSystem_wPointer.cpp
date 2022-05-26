@@ -1,4 +1,4 @@
-#include "iostream"
+#include <iostream>
 using namespace std;
 
 //define the structure
@@ -6,8 +6,8 @@ struct Expenses {
     int year;
     int month;
     int day;
-    int days;
-    int week;
+    int days;       //year-to-date (min=1, max=365)     *Needs when creating a chronological order
+    int week;       //week1 ~ week53                    *Need when calculating the weekly total cost
     float transport_cost;
     float meal_cost;
     float entertainment_cost;
@@ -36,8 +36,8 @@ void view_daily_expenses(struct Expenses* ptr, int days_to_apply);
 void view_weekly_expenses(struct Expenses* ptr, int days_to_apply);
 void year_to_date(struct Expenses* ptr);
 void separate_week(struct Expenses* ptr);
-void calculate_day(struct Expenses* ptr, int days_to_apply);
-void calculate_week(struct Expenses* ptr, int days_to_apply);
+void calculate_per_day(struct Expenses* ptr, int days_to_apply);
+void calculate_per_week(struct Expenses* ptr, int days_to_apply);
 void ascending(struct Expenses* ptr, int days_to_apply);
 
 
@@ -79,8 +79,8 @@ void input(struct Expenses* ptr, int days_to_apply){
         cin >> (ptr+i)->others;
         cout << "\n";
 
-        year_to_date(ptr+i); 
-        separate_week(ptr+i); 
+        year_to_date(ptr+i);        //calcurate year_to_date from month and day information
+        separate_week(ptr+i);       //assign week
     }
 
     
@@ -90,6 +90,9 @@ void input(struct Expenses* ptr, int days_to_apply){
 
 
 void output(struct Expenses* ptr, int days_to_apply){
+    cout << "================================================================\n";
+    cout << "Your Input\n";
+    cout << "================================================================\n";
 
     for (int i = 0; i < days_to_apply; i++){
         cout << (ptr+i)->year << "/" << (ptr+i)->month << "/" << (ptr+i)->day << "\n";
@@ -107,7 +110,7 @@ void view_daily_expenses(struct Expenses* ptr, int days_to_apply){
     cout << "Daily Expenses (NZD)\n";
     cout << "================================================================\n";
 
-    // calculate_day(ptr, days_to_apply);
+    // calculate_per_day(ptr, days_to_apply);
     ascending(ptr, days_to_apply);
     menu(ptr, days_to_apply);
 }
@@ -119,103 +122,105 @@ void view_weekly_expenses(struct Expenses* ptr, int days_to_apply){
     cout << "Weekly Expenses (NZD)\n";
     cout << "================================================================\n";
 
-    calculate_week(ptr, days_to_apply);
+    calculate_per_week(ptr, days_to_apply);
     menu(ptr, days_to_apply);
 }
 
 
 
-void calculate_day(struct Expenses* ptr, int days_to_apply){
-    float total_day = 0;
+void calculate_per_day(struct Expenses* ptr, int days_to_apply){
+    float total_day_cost = 0;
 
     for (int i = 0; i < days_to_apply; i++){
-        total_day = (ptr+i)->transport_cost + (ptr+i)->meal_cost + (ptr+i)->entertainment_cost + (ptr+i)->others;
-        cout << (ptr+i)->year << "/" << (ptr+i)->month << "/" << (ptr+i)->day << "  : " << total_day << "\n";
+        total_day_cost = (ptr+i)->transport_cost + (ptr+i)->meal_cost + (ptr+i)->entertainment_cost + (ptr+i)->others;
+        cout << (ptr+i)->year << "/" << (ptr+i)->month << "/" << (ptr+i)->day << "  : " << total_day_cost << "\n";
     }
 }
 
-void calculate_week(struct Expenses* ptr, int days_to_apply){
-    float total_week = 0;
-    float total_year = 0;
 
-    for (int i = 0; i < 53; i++){
-        total_week = 0;
+void calculate_per_week(struct Expenses* ptr, int days_to_apply){
+    float total_week_cost = 0;
+    float total_year_cost = 0;
+
+    for (int i = 0; i < 53; i++){   //1 year = 53 weeks
+        total_week_cost = 0;        //initialize total week cost
 
         for (int j = 0; j < days_to_apply; j++){
-            if (i + 1 == (ptr+j)->week){
-                total_week += (ptr+j)->transport_cost + (ptr+j)->meal_cost + (ptr+j)->entertainment_cost + (ptr+j)->others;
+            if (i + 1 == (ptr+j)->week){            //calculate from week1 (Day1,2,3,4,5,6,7)
+                total_week_cost += (ptr+j)->transport_cost + (ptr+j)->meal_cost + (ptr+j)->entertainment_cost + (ptr+j)->others;
             }
         }
-        if (total_week > 0){
-            cout << "Week " << i + 1 << " :\t" << total_week << "\n";
-            total_year += total_week; 
+        if (total_week_cost > 0){
+            cout << "Week " << i + 1 << " :\t" << total_week_cost << "\n";
+            total_year_cost += total_week_cost; 
 
         } else {
+            //Show all week cost including 0
             cout << "Week " << i + 1 << " :\t" << 0 << "\n";
         }
     }
-    cout << "Total :  \t" << total_year << "\n";
+    cout << "Total :  \t" << total_year_cost << "\n";
 
 }
 
-
 void year_to_date(struct Expenses* ptr){
     switch (ptr->month){
-        case 1:
+        case 1:     //Jan
         ptr->days = ptr->day;
         break;
 
-        case 2:
+        case 2:     //Feb
         ptr->days = 31 + ptr->day;
         break;
 
-        case 3:
+        case 3:     //Mar
         ptr->days = 31 + 28 + ptr->day;
         break;
 
-        case 4:
+        case 4:     //Apr
         ptr->days = 31 + 28 + 31 + ptr->day;
         break;
 
-        case 5:
+        case 5:     //May
         ptr->days = 31 + 28 + 31 + 30 + ptr->day;
         break;
 
-        case 6:
+        case 6:     //Jun
         ptr->days = 31 + 28 + 31 + 30 + 31 + ptr->day;
         break;
 
-        case 7:
+        case 7:     //Jul
         ptr->days = 31 + 28 + 31 + 30 + 31 + 30 + ptr->day;
         break;
 
-        case 8:
+        case 8:     //Aug
         ptr->days = 31 + 28 + 31 + 30 + 31 + 30 + 31 + ptr->day;
         break;
 
-        case 9:
+        case 9:     //Sep
         ptr->days = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + ptr->day;
         break;
 
-        case 10:
+        case 10:    //Oct
         ptr->days = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + ptr->day;
         break;
 
-        case 11:
+        case 11:    //Nov
         ptr->days = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + ptr->day;
         break;
 
-        case 12:
+        case 12:    //Dec
         ptr->days = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + ptr->day;
         break;
     }
 }
 
+
 void separate_week(struct Expenses* ptr){
-    if (ptr->days % 7 == 0){
-        ptr->week = ptr->days / 7;
+    if (ptr->days % 7 == 0){                //ex) 7%7=0, 14%7=0,....
+        ptr->week = ptr->days / 7;          //ex) 7/7=1 (-->week1), 14/7=2 (-->week2), ....
     } else {
-        ptr->week = (ptr->days / 7) + 1;
+        ptr->week = (ptr->days / 7) + 1;    //ex) 3/7=0(int) +1 =1 (week1)
     }
 }
 
@@ -258,31 +263,34 @@ void menu(struct Expenses* ptr, int days_to_apply){
 
 void ascending(struct Expenses* ptr, int days_to_apply){
     //declare account size
-    int days = days_to_apply;
+    int number_to_organize = days_to_apply;
 
     //create ranking by comparing each customer balance.
     //show smaller balances in order
     //Continue as many as the number of customers
-    while(days > 0){
+    while(number_to_organize > 0){
         int rank = 0;
 
-        for (int i = 0; i < days; i++) {
-            rank = 0;                   //everytime reset the ranking
+        for (int i = 0; i < days_to_apply; i++) {
+            int rank = 0;                   //everytime reset the ranking
 
-            for (int j = 0; j < days; j++){
+            // cout << (ptr + i)->days << "\n";
+
+            for (int j = 0; j < days_to_apply; j++){
                 if (((ptr+i)->days - (ptr+j)->days) < 0){
                     rank++;
                 }
             }
 
-            if (rank == (days - 1)){
-                float total_day = 0;
+            if (rank == (number_to_organize - 1)){
+                float total_cost = 0;
 
-                total_day = (ptr+i)->transport_cost + (ptr+i)->meal_cost + (ptr+i)->entertainment_cost + (ptr+i)->others;
-                cout << (ptr+i)->year << "/" << (ptr+i)->month << "/" << (ptr+i)->day << "  : " << total_day << "\n";
+                total_cost = (ptr+i)->transport_cost + (ptr+i)->meal_cost + (ptr+i)->entertainment_cost + (ptr+i)->others;
+                cout << (ptr+i)->year << "/" << (ptr+i)->month << "/" << (ptr+i)->day << "  : " << total_cost << "\n";
 
-                days--;
+                number_to_organize--;
             }
+
         }
     }
     cout << "\n";
