@@ -1,3 +1,4 @@
+//Section1_Q1 Ryuu Ishita
 #include <iostream>
 using namespace std;
 
@@ -86,9 +87,3 @@ void input(){
     //call output (argument = array)
     output(soccer);
 }
-
-
-
-//Memo
-//1. Need to add comment ✔️
-//2. Need to add validation

@@ -1,3 +1,4 @@
+//Section2_Q6 Ryuu Ishita
 #include <iostream>
 using namespace std;
 
@@ -274,8 +275,6 @@ void ascending(struct Expenses* ptr, int days_to_apply){
         for (int i = 0; i < days_to_apply; i++) {
             int rank = 0;                   //everytime reset the ranking
 
-            // cout << (ptr + i)->days << "\n";
-
             for (int j = 0; j < days_to_apply; j++){
                 if (((ptr+i)->days - (ptr+j)->days) < 0){
                     rank++;
@@ -295,10 +294,3 @@ void ascending(struct Expenses* ptr, int days_to_apply){
     }
     cout << "\n";
 }
-
-
-
-//1. Add option Ascending or Descending
-//2. Minimize the functions
-//3. Change the name
-//4. Use vector
