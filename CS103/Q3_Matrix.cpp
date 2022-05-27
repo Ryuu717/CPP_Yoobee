@@ -1,3 +1,4 @@
+//Section1_Q3 Ryuu Ishita
 #include "iostream"
 using namespace std;
 

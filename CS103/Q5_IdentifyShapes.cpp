@@ -1,3 +1,4 @@
+//Section2_Q5 Ryuu Ishita
 #include <iostream>
 #include <ctime>
 #include <stdio.h>      /* printf, scanf, puts, NULL */

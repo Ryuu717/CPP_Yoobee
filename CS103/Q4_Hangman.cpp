@@ -1,3 +1,4 @@
+//Section2_Q4 Ryuu Ishita
 #include <iostream>
 #include <ctime>
 #include <stdio.h>      /* printf, scanf, puts, NULL */
@@ -145,10 +146,3 @@ void play(){
         draw_line();
     }
 }
-
-
-//Memo
-//1. Create random words ✔️
-//2. validate user input whether it is string or not
-//3. Give initial value(a,i,u,e,o, etc...)  or increase life
-//4. Create a level option
