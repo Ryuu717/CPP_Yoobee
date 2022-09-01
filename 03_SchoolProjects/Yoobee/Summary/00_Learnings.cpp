@@ -38,3 +38,8 @@
         // - define error
         // - multiple throw
         // - rethrow
+
+//W7
+// 1. Pointer
+        // - Basic
+        // - Array
