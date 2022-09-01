@@ -1,13 +1,14 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main(){
     ///////////////////////////////////////////////////////////////////
-    // Array-1 (without vector)
+    // Array-1 
     ///////////////////////////////////////////////////////////////////
-    // int list[3] = {1, 2, 3};
-    int list[3];
-    int* ptrArray = &list[0];   //address of first value of array
+    // int array[3] = {1, 2, 3};
+    int array[3];
+    int* ptrArray = &array[0];   //address of first value of array
 
     //input
     for(int i=0; i<3; i++){
@@ -20,6 +21,7 @@ int main(){
         cout << "Value " << i + 1 << ": " << *ptrArray << "\n";
         *ptrArray++;
     }
+
 
     return 0;
 }
