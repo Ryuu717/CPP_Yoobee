@@ -1,0 +1,3 @@
+﻿  02_DataType2.cpp.cpp
+D:\Users\270190242\source\repos\02_DataType2.cpp\02_DataType2.cpp\02_DataType2.cpp.cpp(90,50): warning C4305: 'argument': truncation from 'double' to 'float'
+  02_DataType2.cpp.vcxproj -> D:\Users\270190242\source\repos\02_DataType2.cpp\Debug\02_DataType2.cpp.exe
