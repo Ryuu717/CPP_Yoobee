@@ -10,7 +10,7 @@ struct Struct{
     char e;
     bool f;
 
-    Struct (int a = 1, float b = 1.1e38, double c = 1.1e308, string d = "string", char e = 'c', bool f = true){
+    Struct (int aa = 1, float b = 1.1e38, double c = 1.1e308, string d = "string", char e = 'c', bool f = true){
         this->a = a;
         this->b = b;
         this->c = c;
@@ -37,7 +37,7 @@ struct Struct{
 };
 
 
-struct Class{
+class Class{
 //private:
     int a ;
     float b;

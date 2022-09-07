@@ -46,7 +46,7 @@ using namespace std;
 
 
 ///////////////////////////////////////////////////////////////////
-// Array-3 (vector for Struct)
+// Array-3 (vector for Class)
 ///////////////////////////////////////////////////////////////////
 #include <vector>
 
@@ -76,7 +76,7 @@ int main(){
         cout << "Enter value: ";
         cin >> value;
 
-        vectorA.push_back(Class(value));
+        vectorA.push_back(Class(value1));
 
         cout << "Continue?(y/n): ";
         cin >> isContinue;

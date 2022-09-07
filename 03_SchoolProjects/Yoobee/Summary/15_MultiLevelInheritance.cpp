@@ -28,7 +28,6 @@ public:
     }
 };
 
-
 class Class3 : public Class1, public Class2{        //inherite Class1 and Class2
 // private:
     int value3;

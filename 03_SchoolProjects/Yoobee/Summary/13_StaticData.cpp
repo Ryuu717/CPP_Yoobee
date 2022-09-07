@@ -30,12 +30,10 @@ int main(){
     //set c1
     cout << "\nValue1: \n";
     c1.setValue();
-    c1.getValue();
 
     //set c2
     cout << "\nValue2: \n";
     c2.setValue();
-    c2.getValue();
 
     //show c1 again
     cout << "\nShow Value1: \n";

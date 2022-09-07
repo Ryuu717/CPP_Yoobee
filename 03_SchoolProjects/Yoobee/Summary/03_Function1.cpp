@@ -22,6 +22,7 @@ int main(){
     cout << "char: \t" << e() << "\n";
     cout << "bool: \t" << f() << "\n";
     g();
+    
     return 0;
 }
 

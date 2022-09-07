@@ -26,7 +26,7 @@ int main(){
         cin >> a;
 
         if (a <= 0){
-            throw 101;
+            // throw 101;
         } else if(a > 10) {
             throw Class(a, "Enter less than 10");
         }
