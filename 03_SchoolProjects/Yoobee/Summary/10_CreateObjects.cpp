@@ -4,39 +4,39 @@ using namespace std;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Ex1) Define list size (based on step1 code)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// class Class{
-// // private:
-//     int value;
+class Class{
+// private:
+    int value;
 
-// public:
-//     Class(int v = 0){
-//         value = v;
-//     }
+public:
+    Class(int v = 0){
+        value = v;
+    }
 
-//     void setValue(){
-//         cout << "Enter value: ";
-//         cin >> value;
-//     }
+    void setValue(){
+        cout << "Enter value: ";
+        cin >> value;
+    }
 
-//     void getValue(){
-//         cout << "Value: " << value << "\n";
-//     }
-// };
+    void getValue(){
+        cout << "Value: " << value << "\n";
+    }
+};
 
-// int main(){
-//     Class list[3];
-//     Class c;
+int main(){
+    Class list[3];
+    Class c;
 
-//     for (int i = 0; i < 3; i++){
-//         c.setValue();
-//         list[i] = c;
-//     }
+    for (int i = 0; i < 3; i++){
+        c.setValue();
+        list[i] = c;
+    }
 
-//     for (int i = 0; i < 3; i++){
-//         list[i].getValue();
-//     }
-//     return 0;
-// }
+    for (int i = 0; i < 3; i++){
+        list[i].getValue();
+    }
+    return 0;
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -88,7 +88,51 @@ using namespace std;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Ex3) Use vector (Don't define list size)
+// Ex3) Define list size (with Pointer)
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+class Class{
+// private:
+    int value;
+
+public:
+    Class(int v = 0){
+        value = v;
+    }
+
+    void setValue(){
+        cout << "Enter value: ";
+        cin >> value;
+    }
+
+    int getValue(){
+        return value;
+    }
+};
+
+int main(){
+    Class* list[100];
+    
+    int n = 0;
+    char isContinue = 'y';
+
+    while(isContinue == 'y'){
+        list[n] = new Class();
+        list[n]->setValue();
+        n++;
+
+        cout << " Do you want to continue?(y / n): "; 
+        cin >> isContinue; 
+    }
+
+    for (int i = 0; i < 3; i++){
+        cout << "Value" << i + 1 << ": " << list[i]->getValue() << "\n";
+    }
+
+    return 0;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Ex4) Use vector (Don't define list size)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // #include <vector>
 
@@ -138,53 +182,53 @@ using namespace std;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Ex4) Use vector (keep private member values)
+// Ex5) Use vector (keep private member values)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#include <vector>
+// #include <vector>
 
-class Class{
-// private:
-    int value;
+// class Class{
+// // private:
+//     int value;
 
-public:
-    Class(int v = 0){
-        value = v;
-    }
+// public:
+//     Class(int v = 0){
+//         value = v;
+//     }
 
-    void setValue(int value){
-        this->value = value;
-    }
+//     void setValue(int value){
+//         this->value = value;
+//     }
 
-    int getValue(){
-        return value;
-    }
-};
+//     int getValue(){
+//         return value;
+//     }
+// };
 
-int main(){
-    vector <Class> list;
-    int value;
+// int main(){
+//     vector <Class> list;
+//     int value;
 
-    char isContinue = 'y';
-    int num = 1;
+//     char isContinue = 'y';
+//     int num = 1;
 
-    while(isContinue == 'y'){
-        cout << "Enter value" << num << ": ";
-        cin >> value;
+//     while(isContinue == 'y'){
+//         cout << "Enter value" << num << ": ";
+//         cin >> value;
 
-        list.push_back(Class(value));
+//         list.push_back(Class(value));
 
-        cout << "Continue?(y/n): ";
-        cin >> isContinue;
-        num++;
-    }
+//         cout << "Continue?(y/n): ";
+//         cin >> isContinue;
+//         num++;
+//     }
 
-    for (int i = 0; i < list.size(); i++){
-        cout << "Value" << i + 1 << ": " << list[i].getValue() << "\n";
-    }
+//     for (int i = 0; i < list.size(); i++){
+//         cout << "Value" << i + 1 << ": " << list[i].getValue() << "\n";
+//     }
     
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 

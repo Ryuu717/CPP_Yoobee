@@ -2,11 +2,9 @@
 #include <vector>
 using namespace std;
 
-///////////////////////////////////////////////////////////////////
-// 1. With pointer (Array)
-///////////////////////////////////////////////////////////////////
 class Class{
 public:
+    //member values
     int value;
 
     // constructor
@@ -14,6 +12,7 @@ public:
         value = v;
     }
 
+    //setter & getter
     virtual void setValue() = 0;
     virtual void getValue() = 0;
 };

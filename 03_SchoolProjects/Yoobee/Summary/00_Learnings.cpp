@@ -42,4 +42,4 @@
 //W7
 // 1. Pointer
         // - Basic
-        // - Array
+        // - Array(int, string, class)
