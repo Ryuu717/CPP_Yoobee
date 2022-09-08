@@ -3,8 +3,8 @@ using namespace std;
 
 class Class{
 public:
-    void display(){
-    // virtual void display(){         //declare virtual function
+    // void display(){
+    virtual void display(){         //declare virtual function
         cout << "Parent class\n";
     }
 };
@@ -17,7 +17,7 @@ public:
 };
 
 int main(){
-    Class c;
+    // Class c;
     Class* c = new Class();
     DerivedClass d;
     c = &d;         //able to override only if the function is virtual
