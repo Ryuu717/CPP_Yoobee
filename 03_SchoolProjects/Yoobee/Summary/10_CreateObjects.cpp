@@ -28,8 +28,9 @@ int main(){
     Class c;
 
     for (int i = 0; i < 3; i++){
-        c.setValue();
-        list[i] = c;
+        // c.setValue();
+        // list[i] = c;
+        list[i].setValue();
     }
 
     for (int i = 0; i < 3; i++){
@@ -74,8 +75,9 @@ int main(){
 //         cout << "Enter value" << i + 1 << ": ";
 //         cin >> value;
 
-//         c.setValue(value);
-//         list[i] = c;
+//         // c.setValue(value);
+//         // list[i] = c;
+//         list[i].setValue(value);
 //     }
 
 //     for (int i = 0; i < 3; i++){
@@ -90,46 +92,46 @@ int main(){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Ex3) Define list size (with Pointer)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-class Class{
-// private:
-    int value;
+// class Class{
+// // private:
+//     int value;
 
-public:
-    Class(int v = 0){
-        value = v;
-    }
+// public:
+//     Class(int v = 0){
+//         value = v;
+//     }
 
-    void setValue(){
-        cout << "Enter value: ";
-        cin >> value;
-    }
+//     void setValue(){
+//         cout << "Enter value: ";
+//         cin >> value;
+//     }
 
-    int getValue(){
-        return value;
-    }
-};
+//     int getValue(){
+//         return value;
+//     }
+// };
 
-int main(){
-    Class* list[100];
+// int main(){
+//     Class* list[100];
     
-    int n = 0;
-    char isContinue = 'y';
+//     int n = 0;
+//     char isContinue = 'y';
 
-    while(isContinue == 'y'){
-        list[n] = new Class();
-        list[n]->setValue();
-        n++;
+//     while(isContinue == 'y'){
+//         list[n] = new Class();
+//         list[n]->setValue();
+//         n++;
 
-        cout << " Do you want to continue?(y / n): "; 
-        cin >> isContinue; 
-    }
+//         cout << " Do you want to continue?(y / n): "; 
+//         cin >> isContinue; 
+//     }
 
-    for (int i = 0; i < 3; i++){
-        cout << "Value" << i + 1 << ": " << list[i]->getValue() << "\n";
-    }
+//     for (int i = 0; i < 3; i++){
+//         cout << "Value" << i + 1 << ": " << list[i]->getValue() << "\n";
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Ex4) Use vector (Don't define list size)
