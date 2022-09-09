@@ -11,7 +11,7 @@ void Student:: readRec(){
 	cin >> gender;
 	cout << "Enter your age : ";
 	cin >> age;
-	cout << "Enter class name(a/b/c) : ";
+	cout << "Enter class name : ";
 	cin >> courseName;
 	cout << "Enter Module1 : ";
 	cin >> module1;
